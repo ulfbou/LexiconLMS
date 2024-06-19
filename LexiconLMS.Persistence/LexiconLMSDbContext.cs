@@ -13,5 +13,10 @@ namespace LexiconLMS.Persistence
         public DbSet<Course> Courses { get; set; } = default!;
         public DbSet<Document> Documents { get; set; } = default!;
         public DbSet<Module> Modules { get; set; } = default!;
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(System.Reflection.Assembly.GetExecutingAssembly());
+        }
     }
 }
