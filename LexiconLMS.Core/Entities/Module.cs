@@ -1,11 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
 namespace LexiconLMS.Core.Entities
 {
-    public class Module
+    public class Module : BaseEntity
     {
-        public int Id { get; set; }
-
         [Required]
         [MinLength(length: 3)]
         public string Name { get; set; } = string.Empty;
