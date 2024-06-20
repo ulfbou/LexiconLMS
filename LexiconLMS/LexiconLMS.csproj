@@ -11,10 +11,23 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.6" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.6">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\LexiconLMS.Persistence\LexiconLMS.Persistence.csproj" />
   </ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="LexiconLMS.Core">
+			<HintPath>..\LexiconLMS.Core\bin\Debug\net8.0\LexiconLMS.Core.dll</HintPath>
+		</Reference>
+	</ItemGroup>
 
 </Project>
