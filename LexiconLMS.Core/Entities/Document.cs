@@ -1,9 +1,20 @@
-﻿namespace LexiconLMS.Core.Entities
+using System.ComponentModel.DataAnnotations;
+
+namespace LexiconLMS.Core.Entities
 {
     public class Document : BaseEntity
     {
-        public string Name { get; set; }
-        public string Description { get; set; }
+        [Required]
+        [MinLength(length: 3)]
+        public string Name { get; set; } = string.Empty;
+
+        [Required]
+        [MinLength(length: 3)]
+        public string Description { get; set; } = string.Empty;
+        
         public DateTime UploadedAt { get; set; }
+
+        // Computed property
+        public string SearchableString => $"{Name} {Description} {UploadTime:yyyy-MM-dd}";
     }
 }
